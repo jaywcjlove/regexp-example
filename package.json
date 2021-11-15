@@ -1,0 +1,20 @@
+{
+  "name": "regexp-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/build.mjs"
+  },
+  "homepage": "https://jaywcjlove.github.io/regexp-example",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywcjlove/regexp-example.git"
+  },
+  "author": "jaywcjlove",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "markdown-to-html-cli": "^3.1.6"
+  }
+}
