@@ -72,6 +72,23 @@ div.regex span.danger {
   word-break: break-all !important;
   white-space: initial !important;
 }
+.btn {
+  position: fixed;
+  border-radius: 2px;
+  right: 12px;
+  width: 34px;
+  font-size: 12px;
+  color: #fff;
+  background: #00000096;
+  z-index: 99;
+  text-align: center;
+  padding: 3px 0;
+  line-height: 16px;
+  text-decoration: initial;
+}
+.btn:hover { background: #2186ff; color: #fff; }
+.btn.create { bottom: 42px; }
+.btn.totop { bottom: 12px; }
 `;
 
 const script = `
@@ -170,6 +187,38 @@ const toolbar = (copied) => {
   }
 }
 
+const createLink = () => ([
+  {
+    type: 'element',
+    tagName: 'a',
+    properties: {
+      className: 'btn create',
+      target: '__blank',
+      href: `https://github.com/jaywcjlove/regexp-example/issues/new?labels=new,enhancement&assignees=jaywcjlove&body=<!--新增正则实例说明-->&title=新增实例：xxx`
+    },
+    children: [
+      {
+        type: 'text',
+        value: '分享例子'
+      }
+    ]
+  },
+  {
+    type: 'element',
+    tagName: 'a',
+    properties: {
+      className: ['btn', 'totop'],
+      href: '#totop'
+    },
+    children: [
+      {
+        type: 'text',
+        value: 'Top'
+      }
+    ]
+  }
+]);
+
 const options = {
   'github-corners': 'https://github.com/jaywcjlove/regexp-example.git',
   document: {
@@ -180,6 +229,11 @@ const options = {
     ]
   },
   rewrite: (node, index, parent) => {
+    if (node.type === 'element' && node.tagName === 'body') {
+      node.properties = { ...node.properties, id: 'totop' };
+      node.children = [...createLink(), ...node.children];
+    }
+
     if (node.tagName === 'pre' && node.properties.className) {
       const lang = Array.isArray(node.properties.className) ? node.properties.className.join('') : node.properties.className;
       if (/-regex$/.test(lang)) {
