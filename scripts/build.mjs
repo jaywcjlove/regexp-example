@@ -19,6 +19,7 @@ div.regex input {
   box-sizing: border-box;
   flex: 1;
 }
+div.regex input.danger { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(253 104 155), inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
 div.regex input:hover { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(55 109 217 / 21%), inset 0 1px 1px rgb(16 22 26 / 0%); }
 div.regex span.success {
   color: #00ad36;
@@ -41,8 +42,9 @@ Array.from(document.getElementsByTagName('input')).forEach((elm) => {
   const code = (elm.dataset.code || '').replace(/\\n/g, '');
   elm.oninput = (evn) => {
     const isChecked = new RegExp(code).test(evn.target.value);
+    elm.className = isChecked ? 'success' : 'danger';
     if (elm.nextSibling) {
-      elm.nextSibling.innerHTML = isChecked ? '通过' : '不通过'
+      elm.nextSibling.innerHTML = isChecked ? '通过' : '×不通过'
       elm.nextSibling.className = isChecked ? 'success' : 'danger';
     }
   }
