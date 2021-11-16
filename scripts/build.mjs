@@ -259,7 +259,7 @@ const options = {
       title: "RegExp Example",
       ...options.document,
       meta: [
-        { description: 'RegExp Example.' },
+        { description: '正则表达式实例搜集，通过实例来学习正则表达式。' },
         { keywords: 'RegExp,example' }
       ]
     }
