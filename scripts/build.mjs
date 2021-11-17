@@ -37,7 +37,6 @@ div.regex span.danger {
   background-color: #fbdcdc;
   margin-left: 10px;
 }
-
 .markdown-body pre {
   position: relative;
 }
@@ -51,8 +50,11 @@ div.regex span.danger {
 .markdown-body pre[class*="language-regex"]:hover .issue {
   visibility: visible;
 }
+.markdown-body pre[class*="language-regex"]:hover .issue a {
+  transition: opacity .5s;
+  opacity: 1;
+}
 .markdown-body pre[class*="language-regex"] .issue {
-  visibility: hidden;
   position: absolute;
   right: 3px;
   margin-top: -28px;
@@ -63,6 +65,7 @@ div.regex span.danger {
   padding: 3px 5px;
   border-radius: 2px;
   color: #fff;
+  opacity: 0.15;
 }
 .markdown-body pre[class*="language-regex"] .issue a + a {
   margin-left: 5px;
@@ -262,10 +265,10 @@ const options = {
     ...options,
     markdown: mdStr,
     document: {
-      title: "RegExp Example",
+      title: "RegExp Example 正则实例大全",
       ...options.document,
       meta: [
-        { description: '正则表达式实例搜集，通过实例来学习正则表达式。' },
+        { description: '正则实例大全，正则表达式实例搜集，通过实例来学习正则表达式。' },
         { keywords: 'RegExp,example' }
       ]
     }
