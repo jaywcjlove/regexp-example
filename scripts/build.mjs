@@ -12,6 +12,7 @@ span.range { border: 1px dotted; border-color: transparent;}
 span.range:hover { border: 1px dotted #0037f9; }
 div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
 div.regex input {
+  transition: all .5s;
   outline: none;
   border: none;
   padding: 4px 6px;
@@ -42,6 +43,10 @@ div.regex span.danger {
 }
 .markdown-body pre[class*="language-regex"] {
   overflow: initial;
+  transition: background-color .5s;
+}
+.markdown-body pre[class*="language-regex"]:hover {
+  background-color: #e3e7e9;
 }
 .markdown-body pre[class*="language-regex"]:hover .issue {
   visibility: visible;
