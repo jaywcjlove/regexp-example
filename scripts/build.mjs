@@ -104,13 +104,13 @@ Array.from(document.getElementsByTagName('input')).forEach((elm) => {
   }
 });
 
-function copied(target, str = '') {
-  target.classList.add('copied')
+function copied(target) {
+  target.classList.add('copied');
   target.innerHTML = '复制成功!';
-  copyTextToClipboard(str, function() {
+  copyTextToClipboard(target.dataset.code, function() {
     setTimeout(() => {
       target.innerHTML = '点击复制';
-      target.classList.remove('copied')
+      target.classList.remove('copied');
     }, 2000);
   });
 }
@@ -159,8 +159,9 @@ const toolbar = (copied) => {
         tagName: 'a',
         properties: {
           className: 'copy',
-          onclick: `copied(this, "${copied}")`,
-          href: `javascript: this;`
+          'data-code': copied,
+          onclick: 'copied(this)',
+          href: 'javascript: this;'
         },
         children: [
           {
