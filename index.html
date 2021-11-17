@@ -12,6 +12,7 @@ span.range { border: 1px dotted; border-color: transparent;}
 span.range:hover { border: 1px dotted #0037f9; }
 div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
 div.regex input {
+transition: all .5s;
 outline: none;
 border: none;
 padding: 4px 6px;
@@ -41,6 +42,10 @@ position: relative;
 }
 .markdown-body pre[class*="language-regex"] {
 overflow: initial;
+transition: background-color .5s;
+}
+.markdown-body pre[class*="language-regex"]:hover {
+background-color: #e3e7e9;
 }
 .markdown-body pre[class*="language-regex"]:hover .issue {
 visibility: visible;
@@ -97,8 +102,230 @@ text-decoration: initial;
     <div class="markdown-body">
       <h1 id="regexp-example"><a class="anchor" aria-hidden="true" tabindex="-1" href="#regexp-example"><span class="octicon octicon-link"></span></a>RegExp Example</h1>
       <p>正则表达式实例搜集，通过实例来学习正则表达式。本仓库实例搜集整理来自于<a href="https://github.com/jaywcjlove/handbook/blob/master/Javascript/%E4%B8%80%E4%BA%9B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%9A%8F%E8%AE%B0.md"><strong>《一些正则表达式随记》</strong></a>，通过一个单独仓库专门整理这些正则实例，提供一个<a href="https://jaywcjlove.github.io/regexp-example"><strong>实例网站</strong></a>，方便正则实例验证和查询。也方便<a href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=new&#x26;assignees=jaywcjlove&#x26;title=%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%AE%9E%E4%BE%8B%EF%BC%9A"><strong>添加</strong></a>新的正则实例大家共同维护。</p>
-      <p><a href="https://jaywcjlove.gitee.io/regexp-example">国内镜像站点🇨🇳</a> · <a href="https://gitee.com/jaywcjlove/regexp-example">Gitee</a> · <a href="#example">Example</a> · <a href="#%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90">工具推荐</a> · <a href="#license">License</a></p>
+      <p><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E9%9B%86">表达式全集</a> · <a href="#example">Example</a> · <a href="https://jaywcjlove.gitee.io/regexp-example">国内镜像站点🇨🇳</a> · <a href="https://gitee.com/jaywcjlove/regexp-example">Gitee</a> · <a href="#%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90">工具推荐</a> · <a href="#license">License</a></p>
       <p>如果有一些基础知识，通过实例理解，将会更快速入门，写出自己的正则。如果对基础还不是很了解，你可以通过<a href="https://github.com/ziishaned/learn-regex"><strong>《Learn regex the easy way》</strong></a>去学习基础知识，这个仓库教程被翻译成十几种语言了，包含了<a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">中文翻译</a>，它通过极其简单的实例，帮助你理解正则基础语法规则。</p>
+      <h2 id="表达式全集"><a class="anchor" aria-hidden="true" tabindex="-1" href="#表达式全集"><span class="octicon octicon-link"></span></a>表达式全集</h2>
+      <details>
+        <summary>元字符</summary>
+        <p>
+          正则表达式主要依赖于元字符。
+          元字符不代表他们本身的字面意思，他们都有特殊的含义。一些元字符写在方括号中的时候有一些特殊的意思。以下是一些元字符的介绍：
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>字符</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.</td>
+              <td>句号匹配任意单个字符除了换行符。要匹配包括 <code>\n</code> 在内的任何字符，请使用像 <code>(.|\n)</code> 的模式。</td>
+            </tr>
+            <tr>
+              <td>[ ]</td>
+              <td>字符种类。匹配方括号内的任意字符。</td>
+            </tr>
+            <tr>
+              <td>[^ ]</td>
+              <td>否定的字符种类。匹配除了方括号里的任意字符</td>
+            </tr>
+            <tr>
+              <td>*</td>
+              <td>匹配 >=0 个重复的在 <code>*</code> 号之前的字符。例如，<code>zo*</code> 能匹配 <code>z</code> 以及 <code>zoo</code> 。<code>*</code> 等价于 <code>{0,}</code>。</td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>匹配 >=1 个重复的 <code>+</code> 号前的字符。例如， <code>zo+</code> 能匹配 <code>zo</code> 以及 <code>zoo</code> ，但不能匹配 <code>z</code> 。<code>+</code> 等价于 <code>{1,}</code>。</td>
+            </tr>
+            <tr>
+              <td>?</td>
+              <td>标记 ? 之前的字符为可选。例如，<code>do(es)?</code> 可以匹配 <code>does</code> 或 <code>does</code> 中的 <code>do</code>。<code>?</code> 等价于 <code>{0,1}</code>。</td>
+            </tr>
+            <tr>
+              <td>|</td>
+              <td>或运算符，匹配符号前或后的字符。例如，`z</td>
+            </tr>
+            <tr>
+              <td>\</td>
+              <td>转义字符,用于匹配一些保留的字符 <code>[ ] ( ) { } . * + ? ^ $ \ &#x26;#124;</code></td>
+            </tr>
+            <tr>
+              <td>^</td>
+              <td>从开始行开始匹配。</td>
+            </tr>
+            <tr>
+              <td>$</td>
+              <td>从末端开始匹配。</td>
+            </tr>
+            <tr>
+              <td>{n}</td>
+              <td><code>n</code> 是一个非负整数。匹配确定的n次。例如， <code>o{2}</code> 不能匹配 <code>Bob</code> 中的 <code>o</code> ，但是能匹配 <code>food</code> 中的两个 <code>o</code>。</td>
+            </tr>
+            <tr>
+              <td>{n,}</td>
+              <td><code>n</code> 是一个非负整数。至少匹配n次。例如， <code>o{2,}</code>不能匹配 <code>Bob</code>中的 <code>o</code>，但能匹配 <code>foooood</code>中的所有o。 <code>o{1,}</code>等价于 <code>o+</code>。 <code>o{0,}</code>则等价于 <code>o*</code>。</td>
+            </tr>
+            <tr>
+              <td>{n,m}</td>
+              <td><code>m</code> 和 <code>n</code> 均为非负整数，其中 <code>n&#x3C;=m</code>。最少匹配 <code>n</code> 次且最多匹配 <code>m</code> 次。例如，<code>o{1,3}</code> 将匹配 <code>fooooood</code> 中的前三个 <code>o</code>。<code>o{0,1}</code> 等价于 <code>o?</code>。请注意在逗号和两个数之间不能有空格。</td>
+            </tr>
+            <tr>
+              <td>(xyz)</td>
+              <td>字符集，匹配与 <code>xyz</code> 完全相等的字符串.</td>
+            </tr>
+            <tr>
+              <td>[xyz]</td>
+              <td>字符集合。匹配所包含的任意一个字符。例如，<code>[abc]</code> 可以匹配 <code>plain</code> 中的 <code>a</code>。</td>
+            </tr>
+            <tr>
+              <td>[^xyz]</td>
+              <td>负值字符集合。匹配未包含的任意字符。例如， <code>[^abc]</code> 可以匹配 <code>plain</code> 中的 <code>p</code>。</td>
+            </tr>
+            <tr>
+              <td>[a-z]</td>
+              <td>字符范围。匹配指定范围内的任意字符。例如，<code>[a-z]</code> 可以匹配 <code>a</code> 到 <code>z</code> 范围内的任意小写字母字符。</td>
+            </tr>
+            <tr>
+              <td>[^a-z]</td>
+              <td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，<code>[^a-z]</code> 可以匹配任何不在 <code>a</code> 到 <code>z</code> 范围内的任意字符。</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+      <details>
+        <summary>字符集简写</summary>
+        <p>正则表达式提供一些常用的字符集简写。如下:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>简写</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.</td>
+              <td>除换行符外的所有字符</td>
+            </tr>
+            <tr>
+              <td>\w</td>
+              <td>匹配所有字母数字，等同于 <code>[a-zA-Z0-9_]</code></td>
+            </tr>
+            <tr>
+              <td>\W</td>
+              <td>匹配所有非字母数字，即符号，等同于： <code>[^\w]</code></td>
+            </tr>
+            <tr>
+              <td>\d</td>
+              <td>匹配数字： <code>[0-9]</code></td>
+            </tr>
+            <tr>
+              <td>\D</td>
+              <td>匹配非数字： <code>[^\d]</code></td>
+            </tr>
+            <tr>
+              <td>\s</td>
+              <td>匹配所有空格字符，等同于： <code>[\t\n\f\r\p{Z}]</code></td>
+            </tr>
+            <tr>
+              <td>\S</td>
+              <td>匹配所有非空格字符： <code>[^\s]</code></td>
+            </tr>
+            <tr>
+              <td>\f</td>
+              <td>匹配一个换页符</td>
+            </tr>
+            <tr>
+              <td>\n</td>
+              <td>匹配一个换行符</td>
+            </tr>
+            <tr>
+              <td>\r</td>
+              <td>匹配一个回车符</td>
+            </tr>
+            <tr>
+              <td>\t</td>
+              <td>匹配一个制表符</td>
+            </tr>
+            <tr>
+              <td>\v</td>
+              <td>匹配一个垂直制表符</td>
+            </tr>
+            <tr>
+              <td>\p</td>
+              <td>匹配 CR/LF（等同于 <code>\r\n</code>），用来匹配 DOS 行终止符</td>
+            </tr>
+            <tr>
+              <td>\b</td>
+              <td>匹配一个单词边界，指单词和空格间的位置。例如，<code>er\b</code> 可以匹配 <code>never</code> 中的 <code>er</code>，但不能匹配 <code>verb</code> 中的 <code>er</code>。</td>
+            </tr>
+            <tr>
+              <td>\B</td>
+              <td>匹配非单词边界。<code>er\B</code> 能匹配 <code>verb</code> 中的 <code>er</code>，但不能匹配 <code>never</code> 中的 <code>er</code>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+      <details>
+        <summary>零宽度断言</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>符号</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>?=</td>
+              <td>正先行断言-存在</td>
+            </tr>
+            <tr>
+              <td>?!</td>
+              <td>负先行断言-排除</td>
+            </tr>
+            <tr>
+              <td>?&#x3C;=</td>
+              <td>正后发断言-存在</td>
+            </tr>
+            <tr>
+              <td>?&#x3C;!</td>
+              <td>负后发断言-排除</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+      <details>
+        <summary>标志 - 模式修正符</summary>
+        <p>
+          标志也叫模式修正符，因为它可以用来修改表达式的搜索结果。
+          这些标志可以任意的组合使用，它也是整个正则表达式的一部分。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>标志</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>i</td>
+              <td>忽略大小写。</td>
+            </tr>
+            <tr>
+              <td>g</td>
+              <td>全局搜索。</td>
+            </tr>
+            <tr>
+              <td>m</td>
+              <td>多行修饰符：锚点元字符 <code>^</code> <code>$</code> 工作范围在每行的起始。</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
       <h2 id="example"><a class="anchor" aria-hidden="true" tabindex="-1" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
       <h3 id="身份证号"><a class="anchor" aria-hidden="true" tabindex="-1" href="#身份证号"><span class="octicon octicon-link"></span></a>身份证号</h3>
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">1<span class="token range-punctuation operator">-</span>9</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token quantifier number">{5}</span><span class="token group punctuation">(</span>18<span class="token alternation keyword">|</span>19<span class="token alternation keyword">|</span><span class="token group punctuation">(</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span>23<span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token group punctuation">)</span><span class="token group punctuation">)</span><span class="token charclass class-name">\d</span><span class="token quantifier number">{2}</span><span class="token group punctuation">(</span><span class="token group punctuation">(</span>0<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">1<span class="token range-punctuation operator">-</span>9</span><span class="token charset-punctuation punctuation">]</span></span><span class="token group punctuation">)</span><span class="token alternation keyword">|</span><span class="token group punctuation">(</span>10<span class="token alternation keyword">|</span>11<span class="token alternation keyword">|</span>12<span class="token group punctuation">)</span><span class="token group punctuation">)</span><span class="token group punctuation">(</span><span class="token group punctuation">(</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>2</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">1<span class="token range-punctuation operator">-</span>9</span><span class="token charset-punctuation punctuation">]</span></span><span class="token group punctuation">)</span><span class="token alternation keyword">|</span>10<span class="token alternation keyword">|</span>20<span class="token alternation keyword">|</span>30<span class="token alternation keyword">|</span>31<span class="token group punctuation">)</span><span class="token charclass class-name">\d</span><span class="token quantifier number">{3}</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>9</span>Xx<span class="token charset-punctuation punctuation">]</span></span><span class="token anchor function">$</span>
@@ -138,6 +365,10 @@ text-decoration: initial;
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^(?:[\u4e00-\u9fa5·]{2,16})$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^(?:[\u4e00-\u9fa5·]{2,16})$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token group punctuation">(?:</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range"><span class="token escape">\u4e00</span><span class="token range-punctuation operator">-</span><span class="token escape">\u9fa5</span></span>·<span class="token charset-punctuation punctuation">]</span></span><span class="token quantifier number">{2,16}</span><span class="token group punctuation">)</span><span class="token anchor function">$</span>
 </code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^(?:[\u4e00-\u9fa5·]{2,16})$"><span class="info"></span></div></pre>
       <p>🚧 E.g: <code>周杰伦</code>, <code>古丽娜扎尔·拜合提亚尔</code>, <code>拉希德·本·穆罕默德·本·拉希德</code>。</p>
+      <h3 id="英文姓名"><a class="anchor" aria-hidden="true" tabindex="-1" href="#英文姓名"><span class="octicon octicon-link"></span></a>英文姓名</h3>
+      <pre class="language-regex"><div class="issue"><a class="copy" data-code="(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token group punctuation">(</span><span class="token anchor function">^</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>z</span><span class="token range">A<span class="token range-punctuation operator">-</span>Z</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>z</span><span class="token range">A<span class="token range-punctuation operator">-</span>Z</span><span class="token charclass class-name">\s</span><span class="token charset-punctuation punctuation">]</span></span><span class="token quantifier number">{0,20}</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>z</span><span class="token range">A<span class="token range-punctuation operator">-</span>Z</span><span class="token charset-punctuation punctuation">]</span></span><span class="token anchor function">$</span><span class="token group punctuation">)</span>
+</code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)"><span class="info"></span></div></pre>
+      <p>🚧 E.g: <code>Gene Kelly</code>, <code>Fred Astaire</code>, <code>Humphrey Bogart</code>, <code>GaryCooper</code>, <code>Cary Grant</code>, <code>Joan Crawford</code></p>
       <h3 id="url"><a class="anchor" aria-hidden="true" tabindex="-1" href="#url"><span class="octicon octicon-link"></span></a>URL</h3>
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^[a-zA-Z]+:\/\/" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^[a-zA-Z]+:\/\/&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>z</span><span class="token range">A<span class="token range-punctuation operator">-</span>Z</span><span class="token charset-punctuation punctuation">]</span></span><span class="token quantifier number">+</span>:<span class="token escape">\/</span><span class="token escape">\/</span>
 </code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^[a-zA-Z]+:\/\/"><span class="info"></span></div></pre>
@@ -250,6 +481,10 @@ text-decoration: initial;
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^\d{5,11}$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^\d{5,11}$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token charclass class-name">\d</span><span class="token quantifier number">{5,11}</span><span class="token anchor function">$</span>
 </code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^\d{5,11}$"><span class="info"></span></div></pre>
       <p>🚧 E.g: <code>398188661</code>。更简单的 QQ 号码正则，5~11位数字组成。</p>
+      <h3 id="中国邮政编码"><a class="anchor" aria-hidden="true" tabindex="-1" href="#中国邮政编码"><span class="octicon octicon-link"></span></a>中国邮政编码</h3>
+      <pre class="language-regex"><div class="issue"><a class="copy" data-code="[1-9]\d{5}(?!\d)" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;[1-9]\d{5}(?!\d)&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">1<span class="token range-punctuation operator">-</span>9</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token quantifier number">{5}</span><span class="token group punctuation">(?!</span><span class="token charclass class-name">\d</span><span class="token group punctuation">)</span>
+</code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="[1-9]\d{5}(?!\d)"><span class="info"></span></div></pre>
+      <p>🚧 E.g: <code>200000</code>。中国邮政编码为 6 位数字。</p>
       <h3 id="英文字母"><a class="anchor" aria-hidden="true" tabindex="-1" href="#英文字母"><span class="octicon octicon-link"></span></a>英文字母</h3>
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^[A-Z]+$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^[A-Z]+$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">A<span class="token range-punctuation operator">-</span>Z</span><span class="token charset-punctuation punctuation">]</span></span><span class="token quantifier number">+</span><span class="token anchor function">$</span>
 </code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^[A-Z]+$"><span class="info"></span></div></pre>
@@ -276,6 +511,13 @@ text-decoration: initial;
       <pre class="language-regex"><div class="issue"><a class="copy" data-code="^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span>magnet:<span class="token special-escape escape">\?</span>xt=urn:btih:<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>9</span><span class="token range">a<span class="token range-punctuation operator">-</span>f</span><span class="token range">A<span class="token range-punctuation operator">-</span>F</span><span class="token charset-punctuation punctuation">]</span></span><span class="token quantifier number">{40,}</span><span class="token charclass class-name">.</span><span class="token quantifier number">*</span><span class="token anchor function">$</span>
 </code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$"><span class="info"></span></div></pre>
       <p>🚧 E.g: <code>magnet:?xt=urn:btih:608FA22181A2614BAE9160763F04FCB7ED296B9E</code></p>
+      <h3 id="时间"><a class="anchor" aria-hidden="true" tabindex="-1" href="#时间"><span class="octicon octicon-link"></span></a>时间</h3>
+      <pre class="language-regex"><div class="issue"><a class="copy" data-code="^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token group punctuation">(?:</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span>01<span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token alternation keyword">|</span>2<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>3</span><span class="token charset-punctuation punctuation">]</span></span><span class="token group punctuation">)</span>:<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>5</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span>:<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>5</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token anchor function">$</span>
+</code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$"><span class="info"></span></div></pre>
+      <p>🚧 E.g: <code>21:54:55</code>，<code>00:23:23</code>。<code>24</code> 小时制时间格式 <code>HH:mm:ss</code>，并且验证时间。</p>
+      <pre class="language-regex"><div class="issue"><a class="copy" data-code="^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$" onclick="copied(this)" href="javascript: this;">点击复制</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌正则：~~&#x60;^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$&#x60;~~&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex"><span class="token anchor function">^</span><span class="token group punctuation">(?:</span>1<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>2</span><span class="token charset-punctuation punctuation">]</span></span><span class="token alternation keyword">|</span>0<span class="token quantifier number">?</span><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">1<span class="token range-punctuation operator">-</span>9</span><span class="token charset-punctuation punctuation">]</span></span><span class="token group punctuation">)</span>:<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>5</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span>:<span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token range">0<span class="token range-punctuation operator">-</span>5</span><span class="token charset-punctuation punctuation">]</span></span><span class="token charclass class-name">\d</span><span class="token anchor function">$</span>
+</code><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$"><span class="info"></span></div></pre>
+      <p>🚧 E.g: <code>12:54:55</code>，<code>01:23:23</code>。<code>12</code> 小时制时间格式 <code>HH:mm:ss</code>，并且验证时间。</p>
       <h2 id="工具推荐"><a class="anchor" aria-hidden="true" tabindex="-1" href="#工具推荐"><span class="octicon octicon-link"></span></a>工具推荐</h2>
       <ul>
         <li><a href="http://github.com/gskinner/regexr">RegExp</a> 线上正则表达式学习利器。</li>
