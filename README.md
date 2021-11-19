@@ -497,7 +497,7 @@ E.g: `G2868`, `D22`, `D9`, `Z5`, `Z24`, `Z17`
 ^thunderx?:\/\/[a-zA-Z\d]+=$
 ```
 
-🚧  E.g: `8080`。
+🚧  E.g: `thunder://QUFodHRwOi0vdG0vbC5sdS90ZXN0LnppcFpa`。
 
 
 ### ed2k链接
