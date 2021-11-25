@@ -89,7 +89,7 @@ const toolbar = (copied) => {
         tagName: 'a',
         properties: {
           target: '__blank',
-          href: `https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&assignees=jaywcjlove&body=❌正则：~~\`${copied}\`~~&title=修改实例：xxx`
+          href: `https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&assignees=jaywcjlove&body=❌ 正则：~~\`${copied}\`~~%0a✅ 正则：\`正则示例\`&title=修改实例：xxx`
         },
         children: [
           {
