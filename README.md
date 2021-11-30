@@ -541,7 +541,7 @@ E.g: `G2868`, `D22`, `D9`, `Z5`, `Z24`, `Z17`
 ## 工具推荐
 
 - [RegExp](http://github.com/gskinner/regexr) 线上正则表达式学习利器。
-- [Regulex](https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24) JavaScript 正则表达式可视化工具。
+- [Regulex](https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24) JavaScript 正则表达式可视化工具。 [🇨🇳](https://jaywcjlove.gitee.io/regulex/)
 - [Rubular](https://rubular.com/) Ruby 正则表达式编辑器。
 - [Regex101](https://regex101.com/) 多语言支持、构建、调试并共享正则。
 - [Regexper](https://regexper.com/) 正则表达式可视化工具。
