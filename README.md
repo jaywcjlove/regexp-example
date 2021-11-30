@@ -5,6 +5,8 @@ RegExp Example
 
 [表达式全集](#表达式全集) · [Example](#example) · [工具推荐](#工具推荐) · [国内镜像站点🇨🇳](https://jaywcjlove.gitee.io/regexp-example) · [Gitee](https://gitee.com/jaywcjlove/regexp-example) · [License](#license)
 
+<!--regulex-->
+
 如果有一些基础知识，通过实例理解，将会更快速入门，写出自己的正则。如果对基础还不是很了解，你可以通过[**《Learn regex the easy way》**](https://github.com/ziishaned/learn-regex)去学习基础知识，这个仓库教程被翻译成十几种语言了，包含了[中文翻译](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)，它通过极其简单的实例，帮助你理解正则基础语法规则。
 
 ## 表达式全集

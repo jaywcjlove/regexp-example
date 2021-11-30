@@ -143,7 +143,15 @@ const options = {
       // { rel: 'shortcut icon', href: './favicon.ico' },
     ]
   },
-  rewrite: (node, index, parent) => {
+  rewrite: (node) => {
+    if (node.type === 'comment' && node.value === 'regulex') {
+      node.type = 'element';
+      node.tagName = 'iframe';
+      node.properties = {
+        src: 'regulex/index.html',
+        visible: 0,
+      }
+    }
     if (node.type === 'element' && node.tagName === 'body') {
       node.properties = { ...node.properties, id: 'totop' };
       node.children = [...createLink(), ...node.children];
@@ -154,9 +162,6 @@ const options = {
       if (/-regex$/.test(lang)) {
         const regCode = node.children[0];
         const regStr = getRegCode(regCode.children).replace(/\n/, '');
-        // console.log('parent:', parent)
-        // console.log('node:', node)
-        // console.log('index:', parent[index-1])
         node.children = [ toolbar(regStr), ...node.children, input(regStr) ];
       }
     }
@@ -166,6 +171,8 @@ const options = {
 ;(async () => {
   await FS.ensureDir(deployDir);
   await FS.emptyDir(deployDir);
+  await FS.emptyDir(path.resolve(process.cwd(), 'web/regulex'));
+  await FS.copyFile(path.resolve(process.cwd(), 'regulex/index.html'), path.resolve(process.cwd(), 'web/regulex/index.html'))
   const mdStr = (await FS.readFile(mdPath)).toString();
   const html = await create({
     ...options,
