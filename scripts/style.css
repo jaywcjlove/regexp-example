@@ -1,4 +1,4 @@
-iframe { border: 0; width: 100%; min-height: 370px; }
+iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; }
 span.charset { background: #fff9c0; }
 span.range { border: 1px dotted; border-color: transparent;}
 span.range:hover { border: 1px dotted #0037f9; }
