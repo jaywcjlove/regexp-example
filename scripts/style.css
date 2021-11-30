@@ -1,4 +1,4 @@
-iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; }
+iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; }
 span.charset { background: #fff9c0; }
 span.range { border: 1px dotted; border-color: transparent;}
 span.range:hover { border: 1px dotted #0037f9; }
@@ -64,6 +64,9 @@ div.regex span.danger {
 }
 .markdown-body pre[class*="language-regex"] .issue a.copy {
   background: #2196f3;
+}
+.markdown-body pre[class*="language-regex"] .issue a.share {
+  background: #009688;
 }
 .markdown-body pre[class*="language-regex"] .issue a.copied {
   background: #4caf50;

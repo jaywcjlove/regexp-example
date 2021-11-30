@@ -72,6 +72,21 @@ const toolbar = (copied) => {
         type: 'element',
         tagName: 'a',
         properties: {
+          target: '__blank',
+          className: 'share',
+          href: `https://jaywcjlove.github.io/regexp-example/regulex/index.html#!flags=&re=${encodeURIComponent(copied)}`
+        },
+        children: [
+          {
+            type: 'text',
+            value: '分享例子'
+          }
+        ]
+      },
+      {
+        type: 'element',
+        tagName: 'a',
+        properties: {
           className: 'copy',
           'data-code': copied,
           onclick: 'copied(this)',
