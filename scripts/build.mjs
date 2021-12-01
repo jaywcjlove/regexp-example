@@ -17,18 +17,7 @@ Array.from(document.getElementsByTagName('input')).forEach((elm) => {
       elm.nextSibling.className = isChecked ? 'success' : 'danger';
     }
   }
-});
-
-function copied(target) {
-  target.classList.add('copied');
-  target.innerHTML = '复制成功!';
-  copyTextToClipboard(target.dataset.code, function() {
-    setTimeout(() => {
-      target.innerHTML = '点击复制';
-      target.classList.remove('copied');
-    }, 2000);
-  });
-}`;
+});`;
 
 const getRegCode = (arr = []) => arr.map(item => {
   if (item.type === 'text') {
@@ -87,22 +76,6 @@ const toolbar = (copied) => {
         type: 'element',
         tagName: 'a',
         properties: {
-          className: 'copy',
-          'data-code': copied,
-          onclick: 'copied(this)',
-          href: 'javascript: this;'
-        },
-        children: [
-          {
-            type: 'text',
-            value: '点击复制'
-          }
-        ]
-      },
-      {
-        type: 'element',
-        tagName: 'a',
-        properties: {
           target: '__blank',
           href: `https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&assignees=jaywcjlove&body=❌ 正则：~~\`${copied}\`~~%0a✅ 正则：\`正则示例\`&title=修改实例：xxx`
         },
@@ -153,7 +126,6 @@ const options = {
   'github-corners': 'https://github.com/jaywcjlove/regexp-example.git',
   document: {
     style, script,
-    js: 'https://unpkg.com/@uiw/copy-to-clipboard/dist/copy-to-clipboard.umd.js',
     link: [
       // { rel: 'shortcut icon', href: './favicon.ico' },
     ]
