@@ -540,6 +540,14 @@ E.g: `G2868`, `D22`, `D9`, `Z5`, `Z24`, `Z17`
 
 🚧  E.g: `<div>title</div>`, `<head>title</head>`。
 
+### HTML注释
+
+```regex
+<!--(.*?)-->
+```
+
+🚧  E.g: `<!-- hello -->`。
+
 ## 工具推荐
 
 - [RegExp](http://github.com/gskinner/regexr) 线上正则表达式学习利器。
