@@ -19,15 +19,16 @@ Array.from(document.getElementsByTagName('input')).forEach((elm) => {
   }
 });`;
 
-const getRegCode = (arr = []) => arr.map(item => {
-  if (item.type === 'text') {
-    return item.value;
-  }
-  if (item.children) {
-    return getRegCode(item.children);
-  }
-  return item
-}).filter(Boolean).flat().join('');
+const getCodeStr = (data = [], code = '') => {
+  data.forEach((node) => {
+    if (node.type === 'text') {
+      code += node.value;
+    } else if (node.type === 'element' && node.children && Array.isArray(node.children)) {
+      code += getCodeStr(node.children);
+    }
+  });
+  return code;
+};
 
 const input = (code) => {
   return {
@@ -147,8 +148,7 @@ const options = {
     if (node.tagName === 'pre' && node.properties.className) {
       const lang = Array.isArray(node.properties.className) ? node.properties.className.join('') : node.properties.className;
       if (/-regex$/.test(lang)) {
-        const regCode = node.children[0];
-        const regStr = getRegCode(regCode.children).replace(/\n/, '');
+        const regStr = getCodeStr(node.children);
         node.children = [ toolbar(regStr), ...node.children, input(regStr) ];
       }
     }
