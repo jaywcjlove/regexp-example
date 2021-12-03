@@ -2,7 +2,7 @@ iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-
 span.charset { background: #fff9c0; }
 span.range { border: 1px dotted; border-color: transparent;}
 span.range:hover { border: 1px dotted #0037f9; }
-div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
+div.regex { margin-top: -10px; padding: 0 16px 16px 16px; display: flex; align-items: center; position: relative; }
 div.regex input {
   transition: all .5s;
   outline: none;
@@ -35,6 +35,13 @@ div.regex span.danger {
 .markdown-body pre[class*="language-regex"] {
   overflow: initial;
   transition: background-color .5s;
+  border-radius: 6px;
+}
+.markdown-body pre[class*="language-regex"] {
+  background-color: #f5f8fa;
+}
+.markdown-body pre[class*="language-regex"] code {
+  background-color: transparent;
 }
 .markdown-body pre[class*="language-regex"]:hover {
   background-color: #e3e7e9;
@@ -49,7 +56,7 @@ div.regex span.danger {
 .markdown-body pre[class*="language-regex"] .issue {
   position: absolute;
   right: 3px;
-  margin-top: -32px;
+  margin-top: -16px;
   font-size: 12px;
 }
 .markdown-body pre[class*="language-regex"] .issue a {
