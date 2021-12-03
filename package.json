@@ -13,7 +13,7 @@
   "author": "jaywcjlove",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^10.0.0",
-    "markdown-to-html-cli": "^3.2.1"
+    "fs-extra": "10.0.0",
+    "markdown-to-html-cli": "3.2.3"
   }
 }
