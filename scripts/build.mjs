@@ -7,7 +7,9 @@ const mdPath = path.resolve(process.cwd(), 'README.md');
 const htmlPath = path.resolve(process.cwd(), 'web', 'index.html');
 const style = FS.readFileSync(path.resolve(process.cwd(), 'scripts/style.css')).toString();
 const script = `
-Array.from(document.getElementsByTagName('input')).forEach((elm) => {
+console.log(document.querySelector('iframe'));
+const inputs = document.querySelector('markdown-style').warpper.querySelectorAll('input');
+Array.from(inputs).forEach((elm) => {
   const code = (elm.dataset.code || '').replace(/\\n/g, '');
   elm.oninput = (evn) => {
     const isChecked = new RegExp(code).test(evn.target.value);
@@ -123,10 +125,120 @@ const createLink = () => ([
   }
 ]);
 
+const stylestr =`
+[data-color-mode*='dark'], [data-color-mode*='dark'] body {
+  --color-header-bg: #ffffff4a;
+}
+[data-color-mode*='light'], [data-color-mode*='light'] body {
+  --color-header-bg: #a4e7a6;
+}
+
+.language-regex span.range { border: 1px dotted; border-color: transparent; color: var(--color-prettylights-syntax-meta-diff-range); }
+.language-regex span.range:hover { border: 1px dotted var(--color-prettylights-syntax-brackethighlighter-unmatched); }
+.language-regex span.char-class { color: var(--color-prettylights-syntax-markup-inserted-text); }
+.language-regex .token.punctuation { color: var(--color-prettylights-syntax-markup-changed-text); }
+.language-regex .token.group { color: var(--color-prettylights-syntax-carriage-return-bg); }
+.language-regex .token.char-set,
+.language-regex .token.number,
+.language-regex .token.range,
+.language-regex .token.anchor { font-weight: bold; }
+.language-regex .token.anchor { color: var(--color-prettylights-syntax-markup-inserted-text); }
+
+iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; background: #edf2f5; }
+span.charset { background: #fff9c0; }
+div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
+div.regex input {
+  transition: all .5s;
+  outline: none;
+  border: none;
+  padding: 4px 6px;
+  padding-right: 60px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  line-height: 18px;
+  flex: 1;
+}
+div.regex input.success { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #15ae3c, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
+div.regex input.danger { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #e91e63, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
+div.regex input:hover { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(55 109 217 / 21%), inset 0 1px 1px rgb(16 22 26 / 0%); }
+div.regex span.success,
+div.regex span.danger { position: absolute; right: 3px; line-height: 16px; padding: 2px 5px; border-radius: 4px; }
+div.regex span.success {
+  color: #00ad36;
+  background-color: #cef3cf;
+}
+div.regex span.danger {
+  color: #cb0649;
+  background-color: #fbdcdc;
+  margin-left: 10px;
+}
+.markdown-body pre[class*="language-regex"] span.anchor {
+  float: initial;
+  padding-right: initial;
+  margin-left: initial;
+}
+.markdown-body pre[class*="language-regex"] {
+  overflow: initial;
+  transition: background-color .5s;
+  border-radius: 6px;
+}
+.markdown-body pre[class*="language-regex"] code {
+  background-color: transparent;
+}
+.markdown-body pre[class*="language-regex"]:hover {
+  background-color: var(--color-header-bg);
+}
+.markdown-body pre[class*="language-regex"]:hover .issue {
+  visibility: visible;
+}
+.markdown-body pre[class*="language-regex"]:hover .issue a {
+  transition: opacity .5s;
+  opacity: 1;
+}
+.markdown-body pre[class*="language-regex"] .issue {
+  position: absolute;
+  right: 3px;
+  margin-top: -39px;
+  padding: 0 0 5px 0;
+  font-size: 12px;
+}
+.markdown-body pre[class*="language-regex"] .issue a {
+  background: #ff5722;
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #fff;
+  opacity: 0.15;
+}
+.markdown-body pre[class*="language-regex"] .issue a + a {
+  margin-left: 5px;
+}
+.markdown-body pre[class*="language-regex"] .issue a.share {
+  background: #009688;
+}
+.markdown-body pre[class*="language-regex"] .issue a.copied {
+  background: #4caf50;
+}
+.markdown-body pre > code[class*="language-regex"] {
+  word-break: break-all !important;
+  white-space: initial !important;
+}
+`;
+
+const styleElement = {
+  type: 'element',
+  tagName: 'style',
+  children: [
+    {
+      type: 'text',
+      value: stylestr,
+    }
+  ]
+}
+
 const options = {
   'github-corners': 'https://github.com/jaywcjlove/regexp-example.git',
   document: {
-    style, script,
+    style,
     link: [
       // { rel: 'shortcut icon', href: './favicon.ico' },
     ]
@@ -142,7 +254,17 @@ const options = {
     }
     if (node.type === 'element' && node.tagName === 'body') {
       node.properties = { ...node.properties, id: 'totop' };
-      node.children = [...createLink(), ...node.children];
+      node.children = [ ...createLink(), ...node.children];
+    }
+    if (node.type === 'element' && node.tagName === 'markdown-style') {
+      node.children.push(styleElement)
+      node.children.push({
+        type: 'element', tagName: 'script',
+        children: [{
+          type: 'text',
+          value: script
+        }]
+      });
     }
 
     if (node.tagName === 'pre' && node.properties.className) {

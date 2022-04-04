@@ -1,92 +1,11 @@
-iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; background: #edf2f5; }
-span.charset { background: #fff9c0; }
-span.range { border: 1px dotted; border-color: transparent;}
-span.range:hover { border: 1px dotted #0037f9; }
-div.regex { margin-top: -10px; padding: 0 16px 16px 16px; display: flex; align-items: center; position: relative; }
-div.regex input {
-  transition: all .5s;
-  outline: none;
-  border: none;
-  padding: 4px 6px;
-  padding-right: 60px;
-  border-radius: 3px;
-  box-sizing: border-box;
-  line-height: 18px;
-  flex: 1;
-}
-div.regex input.success { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #15ae3c, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
-div.regex input.danger { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #e91e63, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
-div.regex input:hover { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(55 109 217 / 21%), inset 0 1px 1px rgb(16 22 26 / 0%); }
-div.regex span.success,
-div.regex span.danger { position: absolute; right: 15px; padding: 2px 3px; border-radius: 2px; }
-div.regex span.success {
-  color: #00ad36;
-  background-color: #cef3cf;
-  margin-left: 10px;
-}
-div.regex span.danger {
-  color: #cb0649;
-  background-color: #fbdcdc;
-  margin-left: 10px;
-}
-.markdown-body pre {
-  position: relative;
-}
-.markdown-body pre[class*="language-regex"] {
-  overflow: initial;
-  transition: background-color .5s;
-  border-radius: 6px;
-}
-.markdown-body pre[class*="language-regex"] {
-  background-color: #f5f8fa;
-}
-.markdown-body pre[class*="language-regex"] code {
-  background-color: transparent;
-}
-.markdown-body pre[class*="language-regex"]:hover {
-  background-color: #e3e7e9;
-}
-.markdown-body pre[class*="language-regex"]:hover .issue {
-  visibility: visible;
-}
-.markdown-body pre[class*="language-regex"]:hover .issue a {
-  transition: opacity .5s;
-  opacity: 1;
-}
-.markdown-body pre[class*="language-regex"] .issue {
-  position: absolute;
-  right: 3px;
-  margin-top: -16px;
-  font-size: 12px;
-}
-.markdown-body pre[class*="language-regex"] .issue a {
-  background: #ff5722;
-  padding: 3px 5px;
-  border-radius: 2px;
-  color: #fff;
-  opacity: 0.15;
-}
-.markdown-body pre[class*="language-regex"] .issue a + a {
-  margin-left: 5px;
-}
-.markdown-body pre[class*="language-regex"] .issue a.share {
-  background: #009688;
-}
-.markdown-body pre[class*="language-regex"] .issue a.copied {
-  background: #4caf50;
-}
-.markdown-body pre > code[class*="language-regex"] {
-  word-break: break-all !important;
-  white-space: initial !important;
-}
 .btn {
   position: fixed;
   border-radius: 2px;
   right: 12px;
   width: 34px;
   font-size: 12px;
-  color: #fff;
-  background: #00000096;
+  color: var(--color-theme-bg);
+  background-color: var(--color-theme-text);
   z-index: 99;
   text-align: center;
   padding: 3px 0;
