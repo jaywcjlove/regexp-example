@@ -7,8 +7,7 @@ const mdPath = path.resolve(process.cwd(), 'README.md');
 const htmlPath = path.resolve(process.cwd(), 'web', 'index.html');
 const style = FS.readFileSync(path.resolve(process.cwd(), 'scripts/style.css')).toString();
 const script = `
-console.log(document.querySelector('iframe'));
-const inputs = document.querySelector('markdown-style').warpper.querySelectorAll('input');
+const inputs = document.querySelector('markdown-style').querySelectorAll('input');
 Array.from(inputs).forEach((elm) => {
   const code = (elm.dataset.code || '').replace(/\\n/g, '');
   elm.oninput = (evn) => {
