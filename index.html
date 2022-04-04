@@ -1016,8 +1016,7 @@ div.regex span.danger {
   white-space: initial !important;
 }
 </style><script>
-console.log(document.querySelector('iframe'));
-const inputs = document.querySelector('markdown-style').warpper.querySelectorAll('input');
+const inputs = document.querySelector('markdown-style').querySelectorAll('input');
 Array.from(inputs).forEach((elm) => {
   const code = (elm.dataset.code || '').replace(/\n/g, '');
   elm.oninput = (evn) => {
