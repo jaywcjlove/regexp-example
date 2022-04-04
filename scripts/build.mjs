@@ -144,7 +144,6 @@ const stylestr =`
 .language-regex .token.anchor { font-weight: bold; }
 .language-regex .token.anchor { color: var(--color-prettylights-syntax-markup-inserted-text); }
 
-iframe { border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; background: #edf2f5; }
 span.charset { background: #fff9c0; }
 div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
 div.regex input {
@@ -248,6 +247,7 @@ const options = {
       node.type = 'element';
       node.tagName = 'iframe';
       node.properties = {
+        style: 'border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; background: #edf2f5;',
         src: 'regulex/index.html',
         visible: 0,
       }
