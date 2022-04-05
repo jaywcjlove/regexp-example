@@ -156,6 +156,9 @@ div.regex input {
   line-height: 18px;
   flex: 1;
 }
+div.regex input::placeholder {
+  color: var(--color-fg-muted);
+}
 div.regex input.success { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #15ae3c, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
 div.regex input.danger { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #e91e63, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
 div.regex input:hover { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(55 109 217 / 21%), inset 0 1px 1px rgb(16 22 26 / 0%); }
