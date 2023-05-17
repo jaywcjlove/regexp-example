@@ -1,6 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!doctype html><html lang="en"><head></head><body id="totop">
+
+  
     <meta charset="utf-8">
     <title>RegExp Example 正则实例大全</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 .btn:hover { background: #2186ff; color: #fff; }
 .btn.create { bottom: 42px; }
 .btn.totop { bottom: 12px; }</style>
-  </head>
-  <body id="totop"><a class="btn create" target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=new,enhancement&#x26;assignees=jaywcjlove&#x26;body=<!--新增正则实例说明-->&#x26;title=新增实例：xxx">分享例子</a><a class="btn totop" href="#totop">Top</a><script type="module">const GITHUB_CORNERS_TEMPLATE = document.createElement("template");
+  
+  <a class="btn create" target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=new,enhancement&#x26;assignees=jaywcjlove&#x26;body=<!--新增正则实例说明-->&#x26;title=新增实例：xxx">分享例子</a><a class="btn totop" href="#totop">Top</a><script type="module">const GITHUB_CORNERS_TEMPLATE = document.createElement("template");
 GITHUB_CORNERS_TEMPLATE.innerHTML = `
 <style>
 :host a:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
@@ -88,7 +88,7 @@ export class GithubCorners extends HTMLElement {
         }
     }
 }
-customElements.define('github-corners', GithubCorners);</script><github-corners target="__blank" position="fixed" z-index="999" href="https://github.com/jaywcjlove/regexp-example.git"></github-corners><dark-mode permanent style="position: fixed; top: 8px; left: 10px; z-index: 999;" dark="Dark" light="Light"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h)}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.label.appendChild(this.icon);this.text=t.createElement("span");this.label.appendChild(this.text);const o=`
+customElements.define('github-corners', GithubCorners);</script><github-corners target="__blank" position="fixed" z-index="999" href="https://github.com/jaywcjlove/regexp-example.git"></github-corners><dark-mode permanent="true" style="position: fixed; top: 8px; left: 10px; z-index: 999;" dark="Dark" light="Light"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h)}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.label.appendChild(this.icon);this.text=t.createElement("span");this.label.appendChild(this.text);const o=`
 [data-color-mode*='dark'], [data-color-mode*='dark'] body {
   color-scheme: dark;
   --color-theme-bg: #0d1117;
@@ -176,230 +176,225 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
     <h1 id="regexp-example"><a class="anchor" aria-hidden="true" tabindex="-1" href="#regexp-example"><span class="octicon octicon-link"></span></a>RegExp Example</h1>
     <p><a href="https://github.com/jaywcjlove/regexp-example/actions/workflows/ci.yml"><img src="https://github.com/jaywcjlove/regexp-example/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
     <p>正则表达式实例搜集，通过实例来学习正则表达式。本仓库实例搜集整理来自于<a href="https://github.com/jaywcjlove/handbook/blob/master/Javascript/%E4%B8%80%E4%BA%9B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%9A%8F%E8%AE%B0.md"><strong>《一些正则表达式随记》</strong></a>，通过一个单独仓库专门整理这些正则实例，提供一个<a href="https://jaywcjlove.github.io/regexp-example"><strong>实例网站</strong></a>，方便正则实例验证和查询。也方便<a href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=new&#x26;assignees=jaywcjlove&#x26;title=%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%AE%9E%E4%BE%8B%EF%BC%9A"><strong>添加</strong></a>新的正则实例大家共同维护。</p>
-    <p><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E9%9B%86">表达式全集</a> · <a href="#example">Example</a> · <a href="#%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90">工具推荐</a> · <a href="https://jaywcjlove.gitee.io/regexp-example">国内镜像站点🇨🇳</a> · <a href="https://gitee.com/jaywcjlove/regexp-example">Gitee</a> · <a href="#license">License</a></p><iframe style="border: 0; width: 100%; min-height: 370px; margin-bottom: 16px; border-radius: 6px; background: #edf2f5;" src="regulex/index.html" visible="0"></iframe>
+    <p><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E9%9B%86">表达式全集</a> · <a href="#example">Example</a> · <a href="#%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90">工具推荐</a> · <a href="https://jaywcjlove.gitee.io/regexp-example">国内镜像站点🇨🇳</a> · <a href="https://gitee.com/jaywcjlove/regexp-example">Gitee</a> · <a href="#license">License</a></p><!--regulex-->
     <p>如果有一些基础知识，通过实例理解，将会更快速入门，写出自己的正则。如果对基础还不是很了解，你可以通过<a href="https://github.com/ziishaned/learn-regex"><strong>《Learn regex the easy way》</strong></a>去学习基础知识，这个仓库教程被翻译成十几种语言了，包含了<a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">中文翻译</a>，它通过极其简单的实例，帮助你理解正则基础语法规则。</p>
-    <h2 id="表达式全集"><a class="anchor" aria-hidden="true" tabindex="-1" href="#表达式全集"><span class="octicon octicon-link"></span></a>表达式全集</h2>
+    <h2 id="表达式全集"><a class="anchor" aria-hidden="true" tabindex="-1" href="#表达式全集"><span class="octicon octicon-link"></span></a>表达式全集</h2><details>
+<summary>元字符</summary>
+    <p>
+      正则表达式主要依赖于元字符。
+      元字符不代表他们本身的字面意思，他们都有特殊的含义。一些元字符写在方括号中的时候有一些特殊的意思。以下是一些元字符的介绍：
+    </p>
+    
+      
+        
+          
+          
+        
+      
+      
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+      
+    <table><thead><tr><th>字符</th><th>描述</th></tr></thead><tbody><tr><td>.</td><td>句号匹配任意单个字符除了换行符。要匹配包括 <code>\n</code> 在内的任何字符，请使用像 <code>(.|\n)</code> 的模式。</td></tr><tr><td>[ ]</td><td>字符种类。匹配方括号内的任意字符。</td></tr><tr><td>[^ ]</td><td>否定的字符种类。匹配除了方括号里的任意字符</td></tr><tr><td>*</td><td>匹配 >=0 个重复的在 <code>*</code> 号之前的字符。例如，<code>zo*</code> 能匹配 <code>z</code> 以及 <code>zoo</code> 。<code>*</code> 等价于 <code>{0,}</code>。</td></tr><tr><td>+</td><td>匹配 >=1 个重复的 <code>+</code> 号前的字符。例如， <code>zo+</code> 能匹配 <code>zo</code> 以及 <code>zoo</code> ，但不能匹配 <code>z</code> 。<code>+</code> 等价于 <code>{1,}</code>。</td></tr><tr><td>?</td><td>标记 ? 之前的字符为可选。例如，<code>do(es)?</code> 可以匹配 <code>does</code> 或 <code>does</code> 中的 <code>do</code>。<code>?</code> 等价于 <code>{0,1}</code>。</td></tr><tr><td>|</td><td>或运算符，匹配符号前或后的字符。例如，`z</td></tr><tr><td>\</td><td>转义字符,用于匹配一些保留的字符 <code>[ ] ( ) { } . * + ? ^ $ \ &#x26;#124;</code></td></tr><tr><td>^</td><td>从开始行开始匹配。</td></tr><tr><td>$</td><td>从末端开始匹配。</td></tr><tr><td>{n}</td><td><code>n</code> 是一个非负整数。匹配确定的n次。例如， <code>o{2}</code> 不能匹配 <code>Bob</code> 中的 <code>o</code> ，但是能匹配 <code>food</code> 中的两个 <code>o</code>。</td></tr><tr><td>{n,}</td><td><code>n</code> 是一个非负整数。至少匹配n次。例如， <code>o{2,}</code>不能匹配 <code>Bob</code>中的 <code>o</code>，但能匹配 <code>foooood</code>中的所有o。 <code>o{1,}</code>等价于 <code>o+</code>。 <code>o{0,}</code>则等价于 <code>o*</code>。</td></tr><tr><td>{n,m}</td><td><code>m</code> 和 <code>n</code> 均为非负整数，其中 <code>n&#x3C;=m</code>。最少匹配 <code>n</code> 次且最多匹配 <code>m</code> 次。例如，<code>o{1,3}</code> 将匹配 <code>fooooood</code> 中的前三个 <code>o</code>。<code>o{0,1}</code> 等价于 <code>o?</code>。请注意在逗号和两个数之间不能有空格。</td></tr><tr><td>(xyz)</td><td>字符集，匹配与 <code>xyz</code> 完全相等的字符串.</td></tr><tr><td>[xyz]</td><td>字符集合。匹配所包含的任意一个字符。例如，<code>[abc]</code> 可以匹配 <code>plain</code> 中的 <code>a</code>。</td></tr><tr><td>[^xyz]</td><td>负值字符集合。匹配未包含的任意字符。例如， <code>[^abc]</code> 可以匹配 <code>plain</code> 中的 <code>p</code>。</td></tr><tr><td>[a-z]</td><td>字符范围。匹配指定范围内的任意字符。例如，<code>[a-z]</code> 可以匹配 <code>a</code> 到 <code>z</code> 范围内的任意小写字母字符。</td></tr><tr><td>[^a-z]</td><td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，<code>[^a-z]</code> 可以匹配任何不在 <code>a</code> 到 <code>z</code> 范围内的任意字符。</td></tr></tbody></table></details>
     <details>
-      <summary>元字符</summary>
-      <p>
-        正则表达式主要依赖于元字符。
-        元字符不代表他们本身的字面意思，他们都有特殊的含义。一些元字符写在方括号中的时候有一些特殊的意思。以下是一些元字符的介绍：
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>字符</th>
-            <th>描述</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>.</td>
-            <td>句号匹配任意单个字符除了换行符。要匹配包括 <code>\n</code> 在内的任何字符，请使用像 <code>(.|\n)</code> 的模式。</td>
-          </tr>
-          <tr>
-            <td>[ ]</td>
-            <td>字符种类。匹配方括号内的任意字符。</td>
-          </tr>
-          <tr>
-            <td>[^ ]</td>
-            <td>否定的字符种类。匹配除了方括号里的任意字符</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>匹配 >=0 个重复的在 <code>*</code> 号之前的字符。例如，<code>zo*</code> 能匹配 <code>z</code> 以及 <code>zoo</code> 。<code>*</code> 等价于 <code>{0,}</code>。</td>
-          </tr>
-          <tr>
-            <td>+</td>
-            <td>匹配 >=1 个重复的 <code>+</code> 号前的字符。例如， <code>zo+</code> 能匹配 <code>zo</code> 以及 <code>zoo</code> ，但不能匹配 <code>z</code> 。<code>+</code> 等价于 <code>{1,}</code>。</td>
-          </tr>
-          <tr>
-            <td>?</td>
-            <td>标记 ? 之前的字符为可选。例如，<code>do(es)?</code> 可以匹配 <code>does</code> 或 <code>does</code> 中的 <code>do</code>。<code>?</code> 等价于 <code>{0,1}</code>。</td>
-          </tr>
-          <tr>
-            <td>|</td>
-            <td>或运算符，匹配符号前或后的字符。例如，`z</td>
-          </tr>
-          <tr>
-            <td>\</td>
-            <td>转义字符,用于匹配一些保留的字符 <code>[ ] ( ) { } . * + ? ^ $ \ &#x26;#124;</code></td>
-          </tr>
-          <tr>
-            <td>^</td>
-            <td>从开始行开始匹配。</td>
-          </tr>
-          <tr>
-            <td>$</td>
-            <td>从末端开始匹配。</td>
-          </tr>
-          <tr>
-            <td>{n}</td>
-            <td><code>n</code> 是一个非负整数。匹配确定的n次。例如， <code>o{2}</code> 不能匹配 <code>Bob</code> 中的 <code>o</code> ，但是能匹配 <code>food</code> 中的两个 <code>o</code>。</td>
-          </tr>
-          <tr>
-            <td>{n,}</td>
-            <td><code>n</code> 是一个非负整数。至少匹配n次。例如， <code>o{2,}</code>不能匹配 <code>Bob</code>中的 <code>o</code>，但能匹配 <code>foooood</code>中的所有o。 <code>o{1,}</code>等价于 <code>o+</code>。 <code>o{0,}</code>则等价于 <code>o*</code>。</td>
-          </tr>
-          <tr>
-            <td>{n,m}</td>
-            <td><code>m</code> 和 <code>n</code> 均为非负整数，其中 <code>n&#x3C;=m</code>。最少匹配 <code>n</code> 次且最多匹配 <code>m</code> 次。例如，<code>o{1,3}</code> 将匹配 <code>fooooood</code> 中的前三个 <code>o</code>。<code>o{0,1}</code> 等价于 <code>o?</code>。请注意在逗号和两个数之间不能有空格。</td>
-          </tr>
-          <tr>
-            <td>(xyz)</td>
-            <td>字符集，匹配与 <code>xyz</code> 完全相等的字符串.</td>
-          </tr>
-          <tr>
-            <td>[xyz]</td>
-            <td>字符集合。匹配所包含的任意一个字符。例如，<code>[abc]</code> 可以匹配 <code>plain</code> 中的 <code>a</code>。</td>
-          </tr>
-          <tr>
-            <td>[^xyz]</td>
-            <td>负值字符集合。匹配未包含的任意字符。例如， <code>[^abc]</code> 可以匹配 <code>plain</code> 中的 <code>p</code>。</td>
-          </tr>
-          <tr>
-            <td>[a-z]</td>
-            <td>字符范围。匹配指定范围内的任意字符。例如，<code>[a-z]</code> 可以匹配 <code>a</code> 到 <code>z</code> 范围内的任意小写字母字符。</td>
-          </tr>
-          <tr>
-            <td>[^a-z]</td>
-            <td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，<code>[^a-z]</code> 可以匹配任何不在 <code>a</code> 到 <code>z</code> 范围内的任意字符。</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+<summary>字符集简写</summary>
+    <p>正则表达式提供一些常用的字符集简写。如下:</p>
+    
+      
+        
+          
+          
+        
+      
+      
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+      
+    <table><thead><tr><th>简写</th><th>描述</th></tr></thead><tbody><tr><td>.</td><td>除换行符外的所有字符</td></tr><tr><td>\w</td><td>匹配所有字母数字，等同于 <code>[a-zA-Z0-9_]</code></td></tr><tr><td>\W</td><td>匹配所有非字母数字，即符号，等同于： <code>[^\w]</code></td></tr><tr><td>\d</td><td>匹配数字： <code>[0-9]</code></td></tr><tr><td>\D</td><td>匹配非数字： <code>[^\d]</code></td></tr><tr><td>\s</td><td>匹配所有空格字符，等同于： <code>[\t\n\f\r\p{Z}]</code></td></tr><tr><td>\S</td><td>匹配所有非空格字符： <code>[^\s]</code></td></tr><tr><td>\f</td><td>匹配一个换页符</td></tr><tr><td>\n</td><td>匹配一个换行符</td></tr><tr><td>\r</td><td>匹配一个回车符</td></tr><tr><td>\t</td><td>匹配一个制表符</td></tr><tr><td>\v</td><td>匹配一个垂直制表符</td></tr><tr><td>\p</td><td>匹配 CR/LF（等同于 <code>\r\n</code>），用来匹配 DOS 行终止符</td></tr><tr><td>\b</td><td>匹配一个单词边界，指单词和空格间的位置。例如，<code>er\b</code> 可以匹配 <code>never</code> 中的 <code>er</code>，但不能匹配 <code>verb</code> 中的 <code>er</code>。</td></tr><tr><td>\B</td><td>匹配非单词边界。<code>er\B</code> 能匹配 <code>verb</code> 中的 <code>er</code>，但不能匹配 <code>never</code> 中的 <code>er</code>。</td></tr></tbody></table></details>
     <details>
-      <summary>字符集简写</summary>
-      <p>正则表达式提供一些常用的字符集简写。如下:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>简写</th>
-            <th>描述</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>.</td>
-            <td>除换行符外的所有字符</td>
-          </tr>
-          <tr>
-            <td>\w</td>
-            <td>匹配所有字母数字，等同于 <code>[a-zA-Z0-9_]</code></td>
-          </tr>
-          <tr>
-            <td>\W</td>
-            <td>匹配所有非字母数字，即符号，等同于： <code>[^\w]</code></td>
-          </tr>
-          <tr>
-            <td>\d</td>
-            <td>匹配数字： <code>[0-9]</code></td>
-          </tr>
-          <tr>
-            <td>\D</td>
-            <td>匹配非数字： <code>[^\d]</code></td>
-          </tr>
-          <tr>
-            <td>\s</td>
-            <td>匹配所有空格字符，等同于： <code>[\t\n\f\r\p{Z}]</code></td>
-          </tr>
-          <tr>
-            <td>\S</td>
-            <td>匹配所有非空格字符： <code>[^\s]</code></td>
-          </tr>
-          <tr>
-            <td>\f</td>
-            <td>匹配一个换页符</td>
-          </tr>
-          <tr>
-            <td>\n</td>
-            <td>匹配一个换行符</td>
-          </tr>
-          <tr>
-            <td>\r</td>
-            <td>匹配一个回车符</td>
-          </tr>
-          <tr>
-            <td>\t</td>
-            <td>匹配一个制表符</td>
-          </tr>
-          <tr>
-            <td>\v</td>
-            <td>匹配一个垂直制表符</td>
-          </tr>
-          <tr>
-            <td>\p</td>
-            <td>匹配 CR/LF（等同于 <code>\r\n</code>），用来匹配 DOS 行终止符</td>
-          </tr>
-          <tr>
-            <td>\b</td>
-            <td>匹配一个单词边界，指单词和空格间的位置。例如，<code>er\b</code> 可以匹配 <code>never</code> 中的 <code>er</code>，但不能匹配 <code>verb</code> 中的 <code>er</code>。</td>
-          </tr>
-          <tr>
-            <td>\B</td>
-            <td>匹配非单词边界。<code>er\B</code> 能匹配 <code>verb</code> 中的 <code>er</code>，但不能匹配 <code>never</code> 中的 <code>er</code>。</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+<summary>零宽度断言</summary>
+    
+      
+        
+          
+          
+        
+      
+      
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+      
+    <table><thead><tr><th>符号</th><th>描述</th></tr></thead><tbody><tr><td>?=</td><td>正先行断言-存在</td></tr><tr><td>?!</td><td>负先行断言-排除</td></tr><tr><td>?&#x3C;=</td><td>正后发断言-存在</td></tr><tr><td>?&#x3C;!</td><td>负后发断言-排除</td></tr></tbody></table></details>
     <details>
-      <summary>零宽度断言</summary>
-      <table>
-        <thead>
-          <tr>
-            <th>符号</th>
-            <th>描述</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>?=</td>
-            <td>正先行断言-存在</td>
-          </tr>
-          <tr>
-            <td>?!</td>
-            <td>负先行断言-排除</td>
-          </tr>
-          <tr>
-            <td>?&#x3C;=</td>
-            <td>正后发断言-存在</td>
-          </tr>
-          <tr>
-            <td>?&#x3C;!</td>
-            <td>负后发断言-排除</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
-    <details>
-      <summary>标志 - 模式修正符</summary>
-      <p>
-        标志也叫模式修正符，因为它可以用来修改表达式的搜索结果。
-        这些标志可以任意的组合使用，它也是整个正则表达式的一部分。
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>标志</th>
-            <th>描述</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>i</td>
-            <td>忽略大小写。</td>
-          </tr>
-          <tr>
-            <td>g</td>
-            <td>全局搜索。</td>
-          </tr>
-          <tr>
-            <td>m</td>
-            <td>多行修饰符：锚点元字符 <code>^</code> <code>$</code> 工作范围在每行的起始。</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+<summary>标志 - 模式修正符</summary>
+    <p>
+      标志也叫模式修正符，因为它可以用来修改表达式的搜索结果。
+      这些标志可以任意的组合使用，它也是整个正则表达式的一部分。
+    </p>
+    
+      
+        
+          
+          
+        
+      
+      
+        
+          
+          
+        
+        
+          
+          
+        
+        
+          
+          
+        
+      
+    <table><thead><tr><th>标志</th><th>描述</th></tr></thead><tbody><tr><td>i</td><td>忽略大小写。</td></tr><tr><td>g</td><td>全局搜索。</td></tr><tr><td>m</td><td>多行修饰符：锚点元字符 <code>^</code> <code>$</code> 工作范围在每行的起始。</td></tr></tbody></table></details>
     <h2 id="example"><a class="anchor" aria-hidden="true" tabindex="-1" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
     <h3 id="身份证号"><a class="anchor" aria-hidden="true" tabindex="-1" href="#身份证号"><span class="octicon octicon-link"></span></a>身份证号</h3>
     <pre class="language-regex"><div class="issue"><a target="__blank" class="share" href="https://jaywcjlove.github.io/regexp-example/regulex/index.html#!flags=&#x26;re=%5E%5B1-9%5D%5Cd%7B5%7D(18%7C19%7C(%5B23%5D%5Cd))%5Cd%7B2%7D((0%5B1-9%5D)%7C(10%7C11%7C12))((%5B0-2%5D%5B1-9%5D)%7C10%7C20%7C30%7C31)%5Cd%7B3%7D%5B0-9Xx%5D%24%0A">分享例子</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌ 正则：~~&#x60;^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$
@@ -562,18 +557,16 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="^((\+?[0-9]{1,4})|(\(\+86\)))?(13[0-9]|14[57]|15[012356789]|17[03678]|18[0-9])\d{8}$
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^((\+?[0-9]{1,4})|(\(\+86\)))?(13[0-9]|14[57]|15[012356789]|17[03678]|18[0-9])\d{8}$
 "><span class="info"></span></div></pre>
-    <p>🚧 E.g: <code>13611779993</code>, <code>+8613611779993</code></p>
-    <details>
-      <summary>正则规则详细说明</summary>
-      <ul>
-        <li>13段：130、131、132、133、134、135、136、137、138、139</li>
-        <li>14段：145、147</li>
-        <li>15段：150、151、152、153、155、156、157、158、159</li>
-        <li>17段：170、176、177、178</li>
-        <li>18段：180、181、182、183、184、185、186、187、188、189</li>
-        <li>国际码 如：中国(+86)</li>
-      </ul>
-    </details>
+    <p>🚧 E.g: <code>13611779993</code>, <code>+8613611779993</code></p><details>
+<summary>正则规则详细说明</summary>
+    <ul>
+      <li>13段：130、131、132、133、134、135、136、137、138、139</li>
+      <li>14段：145、147</li>
+      <li>15段：150、151、152、153、155、156、157、158、159</li>
+      <li>17段：170、176、177、178</li>
+      <li>18段：180、181、182、183、184、185、186、187、188、189</li>
+      <li>国际码 如：中国(+86)</li>
+    </ul></details>
     <h3 id="md5格式32位"><a class="anchor" aria-hidden="true" tabindex="-1" href="#md5格式32位"><span class="octicon octicon-link"></span></a>MD5格式(32位)</h3>
     <pre class="language-regex"><div class="issue"><a target="__blank" class="share" href="https://jaywcjlove.github.io/regexp-example/regulex/index.html#!flags=&#x26;re=%5E%5Ba-f0-9%5D%7B32%7D%24%0A">分享例子</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌ 正则：~~&#x60;^[a-f0-9]{32}$
 &#x60;~~%0a✅ 正则：&#x60;正则示例&#x60;&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex code-highlight"><span class="code-line line-number" line="1"><span class="token anchor function">^</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>f</span><span class="token range">0<span class="token range-punctuation operator">-</span>9</span><span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">{32}</span><span class="token anchor function">$</span>
@@ -613,20 +606,18 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><div class="regex"><input type="text" value="" placeholder="请输入下方【E.g】字符串验证实例" data-code="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$
 "><span class="info"></span></div></pre>
-    <p>🚧 E.g: <code>wowohoo@qq.com</code></p>
-    <details>
-      <summary>正则规则详细说明</summary>
-      <ol>
-        <li>邮箱以a-z、A-Z、0-9开头，最小长度为1.</li>
-        <li>如果左侧部分包含-、_、.则这些特殊符号的前面必须包一位数字或字母。</li>
-        <li>@符号是必填项</li>
-        <li>
-          右则部分可分为两部分，第一部分为邮件提供商域名地址，第二部分为域名后缀，现已知的最短为2位。
-          最长的为6为。
-        </li>
-        <li>邮件提供商域可以包含特殊字符-、_、.</li>
-      </ol>
-    </details>
+    <p>🚧 E.g: <code>wowohoo@qq.com</code></p><details>
+<summary>正则规则详细说明</summary>
+    <ol>
+      <li>邮箱以a-z、A-Z、0-9开头，最小长度为1.</li>
+      <li>如果左侧部分包含-、_、.则这些特殊符号的前面必须包一位数字或字母。</li>
+      <li>@符号是必填项</li>
+      <li>
+        右则部分可分为两部分，第一部分为邮件提供商域名地址，第二部分为域名后缀，现已知的最短为2位。
+        最长的为6为。
+      </li>
+      <li>邮件提供商域可以包含特殊字符-、_、.</li>
+    </ol></details>
     <h3 id="十六进制颜色"><a class="anchor" aria-hidden="true" tabindex="-1" href="#十六进制颜色"><span class="octicon octicon-link"></span></a>十六进制颜色</h3>
     <pre class="language-regex"><div class="issue"><a target="__blank" class="share" href="https://jaywcjlove.github.io/regexp-example/regulex/index.html#!flags=&#x26;re=%5E%23%3F(%5Ba-fA-F0-9%5D%7B6%7D%7C%5Ba-fA-F0-9%5D%7B3%7D)%24%0A">分享例子</a><a target="__blank" href="https://github.com/jaywcjlove/regexp-example/issues/new?labels=bug,enhancement&#x26;assignees=jaywcjlove&#x26;body=❌ 正则：~~&#x60;^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$
 &#x60;~~%0a✅ 正则：&#x60;正则示例&#x60;&#x26;title=修改实例：xxx">🐞修改正则</a></div><code class="language-regex code-highlight"><span class="code-line line-number" line="1"><span class="token anchor function">^</span>#<span class="token quantifier number">?</span><span class="token group punctuation">(</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>f</span><span class="token range">A<span class="token range-punctuation operator">-</span>F</span><span class="token range">0<span class="token range-punctuation operator">-</span>9</span><span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">{6}</span><span class="token alternation keyword">|</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token range">a<span class="token range-punctuation operator">-</span>f</span><span class="token range">A<span class="token range-punctuation operator">-</span>F</span><span class="token range">0<span class="token range-punctuation operator">-</span>9</span><span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">{3}</span><span class="token group punctuation">)</span><span class="token anchor function">$</span>
@@ -844,7 +835,9 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
       <li><a href="https://github.com/Bowen7/regex-vis">Regex-Vis</a> 一个开源的正则表达式可视化编辑器。</li>
     </ul>
     <h2 id="contributors"><a class="anchor" aria-hidden="true" tabindex="-1" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h2>
-    <p>As always, thanks to our amazing contributors!</p><a href="https://github.com/jaywcjlove/regexp-example/graphs/contributors"><img src="https://jaywcjlove.github.io/regexp-example/CONTRIBUTORS.svg"></a>
+    <p>As always, thanks to our amazing contributors!</p><a href="https://github.com/jaywcjlove/regexp-example/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/regexp-example/CONTRIBUTORS.svg">
+</a>
     <p>Made with <a href="https://github.com/jaywcjlove/github-action-contributors">github-action-contributors</a>.</p>
     <h2 id="license"><a class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
     <p>Licensed under the MIT License.</p>
@@ -1008,5 +1001,6 @@ Array.from(inputs).forEach((elm) => {
       elm.nextSibling.className = isChecked ? 'success' : 'danger';
     }
   }
-});</script></markdown-style></body>
-</html>
+});</script></markdown-style>
+
+</body></html>
