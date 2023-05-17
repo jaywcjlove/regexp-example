@@ -144,7 +144,7 @@ const stylestr =`
 .language-regex .token.anchor { color: var(--color-prettylights-syntax-markup-inserted-text); }
 
 span.charset { background: #fff9c0; }
-div.regex { margin-top: 10px; display: flex; align-items: center; position: relative; }
+div.regex { display: flex; align-items: center; position: relative; padding: 0 10px 10px 10px;}
 div.regex input {
   transition: all .5s;
   outline: none;
@@ -163,7 +163,7 @@ div.regex input.success { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #15ae3c, inse
 div.regex input.danger { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #e91e63, inset 0 1px 1px rgb(16 22 26 / 0%) !important; }
 div.regex input:hover { box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px rgb(55 109 217 / 21%), inset 0 1px 1px rgb(16 22 26 / 0%); }
 div.regex span.success,
-div.regex span.danger { position: absolute; right: 3px; line-height: 16px; padding: 2px 5px; border-radius: 4px; }
+div.regex span.danger { position: absolute; right: 3px; line-height: 16px; padding: 2px 5px; border-radius: 4px; margin-right: 10px; }
 div.regex span.success {
   color: #00ad36;
   background-color: #cef3cf;
@@ -173,53 +173,53 @@ div.regex span.danger {
   background-color: #fbdcdc;
   margin-left: 10px;
 }
-.markdown-body pre[class*="language-regex"] span.anchor {
+.markdown-style pre[class*="language-regex"] span.anchor {
   float: initial;
   padding-right: initial;
   margin-left: initial;
 }
-.markdown-body pre[class*="language-regex"] {
+.markdown-style pre[class*="language-regex"] {
   overflow: initial;
   transition: background-color .5s;
   border-radius: 6px;
 }
-.markdown-body pre[class*="language-regex"] code {
+.markdown-style pre[class*="language-regex"] code {
   background-color: transparent;
 }
-.markdown-body pre[class*="language-regex"]:hover {
+.markdown-style pre[class*="language-regex"]:hover {
   background-color: var(--color-header-bg);
 }
-.markdown-body pre[class*="language-regex"]:hover .issue {
+.markdown-style pre[class*="language-regex"]:hover .issue {
   visibility: visible;
 }
-.markdown-body pre[class*="language-regex"]:hover .issue a {
+.markdown-style pre[class*="language-regex"]:hover .issue a {
   transition: opacity .5s;
   opacity: 1;
 }
-.markdown-body pre[class*="language-regex"] .issue {
+.markdown-style pre[class*="language-regex"] .issue {
   position: absolute;
   right: 3px;
-  margin-top: -39px;
+  margin-top: -16px;
   padding: 0 0 5px 0;
   font-size: 12px;
 }
-.markdown-body pre[class*="language-regex"] .issue a {
+.markdown-style pre[class*="language-regex"] .issue a {
   background: #ff5722;
   padding: 3px 5px;
   border-radius: 2px;
   color: #fff;
   opacity: 0.15;
 }
-.markdown-body pre[class*="language-regex"] .issue a + a {
+.markdown-style pre[class*="language-regex"] .issue a + a {
   margin-left: 5px;
 }
-.markdown-body pre[class*="language-regex"] .issue a.share {
+.markdown-style pre[class*="language-regex"] .issue a.share {
   background: #009688;
 }
-.markdown-body pre[class*="language-regex"] .issue a.copied {
+.markdown-style pre[class*="language-regex"] .issue a.copied {
   background: #4caf50;
 }
-.markdown-body pre > code[class*="language-regex"] {
+.markdown-style pre > code[class*="language-regex"] {
   word-break: break-all !important;
   white-space: initial !important;
 }
