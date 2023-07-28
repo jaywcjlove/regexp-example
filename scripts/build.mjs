@@ -245,7 +245,7 @@ const options = {
     ]
   },
   rewrite: (node) => {
-    if (node.type === 'comment' && node.value === 'regulex') {
+    if ((node.type === 'comment' && node.value === 'regulex') || (node.type === 'raw' && node.value === '<!--regulex-->')) {
       node.type = 'element';
       node.tagName = 'iframe';
       node.properties = {
