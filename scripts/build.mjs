@@ -227,6 +227,7 @@ div.regex span.danger {
 
 const styleElement = {
   type: 'element',
+  properties: {},
   tagName: 'style',
   children: [
     {
@@ -262,6 +263,7 @@ const options = {
       node.children.push(styleElement)
       node.children.push({
         type: 'element', tagName: 'script',
+        properties: {},
         children: [{
           type: 'text',
           value: script
