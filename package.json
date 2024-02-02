@@ -14,6 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "fs-extra": "~11.1.0",
-    "markdown-to-html-cli": "~4.0.0"
+    "markdown-to-html-cli": "~4.1.0"
   }
 }
