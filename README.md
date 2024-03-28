@@ -1,10 +1,15 @@
 RegExp Example
 ===
+<!--rehype:style=margin-top: 120px !important;-->
+
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![CI](https://github.com/jaywcjlove/regexp-example/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/regexp-example/actions/workflows/ci.yml)
 
 正则表达式实例搜集，通过实例来学习正则表达式。本仓库实例搜集整理来自于[**《一些正则表达式随记》**](https://github.com/jaywcjlove/handbook/blob/master/Javascript/%E4%B8%80%E4%BA%9B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%9A%8F%E8%AE%B0.md)，通过一个单独仓库专门整理这些正则实例，提供一个[**实例网站**](https://jaywcjlove.github.io/regexp-example)，方便正则实例验证和查询。也方便[**添加**](https://github.com/jaywcjlove/regexp-example/issues/new?labels=new&assignees=jaywcjlove&title=%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%AE%9E%E4%BE%8B%EF%BC%9A)新的正则实例大家共同维护。
+
+<a target="_blank" href="https://apps.apple.com/app/regex-mate/id6479819388" title="RegexMate AppStore"><img alt="RegexMate AppStore" src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1705968000" height="51">
+</a>
 
 [表达式全集](#表达式全集) · [Example](#example) · [工具推荐](#工具推荐) · [国内镜像站点🇨🇳](https://jaywcjlove.gitee.io/regexp-example) · [Gitee](https://gitee.com/jaywcjlove/regexp-example) · [License](#license)
 
