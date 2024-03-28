@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cp -rp regulex dist && idoc -w",
-    "doc": "cpy regulex dist/ && idoc",
-    "1start": "node scripts/build.mjs"
+    "doc": "cpy regulex dist/ && idoc"
   },
   "homepage": "https://jaywcjlove.github.io/regexp-example/",
   "repository": {
