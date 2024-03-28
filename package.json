@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "cpy-cli": "^5.0.0",
-    "fs-extra": "~11.1.0",
+    "fs-extra": "~11.2.0",
     "idoc": "^1.31.0"
   }
 }
