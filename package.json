@@ -3,17 +3,30 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node scripts/build.mjs"
+    "start": "cp -rp regulex dist && idoc -w",
+    "doc": "cpy regulex dist/ && idoc",
+    "1start": "node scripts/build.mjs"
   },
-  "homepage": "https://jaywcjlove.github.io/regexp-example",
+  "homepage": "https://jaywcjlove.github.io/regexp-example/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaywcjlove/regexp-example.git"
   },
   "author": "jaywcjlove",
   "license": "MIT",
+  "keywords": [
+    "regexp",
+    "example",
+    "regexp-example",
+    "regular-expression",
+    "learn-regex",
+    "正则表达式",
+    "正则",
+    "regex"
+  ],
   "dependencies": {
+    "cpy-cli": "^5.0.0",
     "fs-extra": "~11.1.0",
-    "markdown-to-html-cli": "~4.0.0"
+    "idoc": "^1.31.0"
   }
 }
